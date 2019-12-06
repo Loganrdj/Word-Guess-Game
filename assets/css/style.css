@@ -3,11 +3,11 @@ font-family: 'Gloria Hallelujah', cursive;
 font-family: 'Press Start 2P', cursive;
 */
 
-header, body, footer, section, aside{
-    padding: 20px;
+header, body, footer, section{
+    padding: 25px;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
     text-align: center;
     outline-style: solid;
     outline-color: white;
@@ -27,14 +27,23 @@ p, h1, h2, h3{
 
 section{
     padding: 40px;
-    padding-bottom: 5%;
+    padding-bottom: 7%;
 }
 
+
 aside{
+    margin:auto;
     float:left;
-    margin: auto;
-    padding-top: 40px;
-    padding-bottom: 25px;
+    padding-left: 15%;
+    padding-bottom: 40px;
+}
+
+
+box{
+    float:right;
+    margin:auto;
+    padding-right: 20%;
+    padding-bottom: 40px;
 }
 
 #titlefont{

@@ -1,7 +1,7 @@
 var arrAnswers = ["Rocket League", "Sea of Thieves", "Call of Duty", "League of Legends", "Teamfight Tactics", "Dota", "Starcraft", "World of Warcraft", "Fortnite", "Minecraft", "Grand Theft Auto", "HearthStone", "Counter Strike", "FIFA", "Pokemon", "Escape From Tarkov", "Rust", "DayZ", "Poker", "Payday", "Diablo", "Black Desert Online", "Monster Hunter", "Celeste", "Gang Beasts", "PUBG", "Halo"];
 var userGuessArr = [];
 var totalguesses = 0;
-var guesscounter = 4;
+var guesscounter = 5;
 var tempAnswer = arrAnswers[Math.floor(Math.random()*arrAnswers.length)];
 var tempAnswerArr = [];
 var blankAnswerArr = [];
