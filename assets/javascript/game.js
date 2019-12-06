@@ -13,7 +13,7 @@ for (let i = 0; i < tempAnswer.length; i++){
 
 /* this function validates whether or not the user is pressing a valid key */
 function checkKey(keypress){
-    var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     if(alphabet.includes(keypress)){
         return true;
     } else {
@@ -41,15 +41,12 @@ function resetGame(tempAnswer, totalguesses, guesscounter, userGuessArr, blankAn
     for (let i = 0; i < tempAnswer.length; i++){
         tempAnswerArr.push(tempAnswer.charAt(i).toLowerCase());
     }
-
     var blankAnswerArr = [];
     var totalguesses = 0;
     var guesscounter = 4;
     var userGuessArr = [];
-
     setBlanks(tempAnswerArr,blankAnswerArr);
     console.log(blankAnswerArr);
-
     document.getElementById("guesscount").innerHTML = "You have " + guesscounter + " guesses remaining!";   
     document.getElementById("userguess").innerHTML = "[" + userGuessArr + "]";  //Add incorrect letter to array
     document.getElementById("answer").innerHTML = blankAnswerArr.toString();
@@ -69,9 +66,17 @@ document.onkeyup = function(event) {
         document.getElementById("blinking").style.visibility = "hidden";
 
         //Set answer to blanks && use let to utilize scope
-        setBlanks(tempAnswerArr,blankAnswerArr)
+        setBlanks(tempAnswerArr,blankAnswerArr);
 
-        document.getElementById("answer").innerHTML = blankAnswerArr.toString();
+
+        // var tempDisplay = blankAnswerArr.toString()
+
+        var tempDisplay = blankAnswerArr.toString().replace(/ /g, "&nbsp");
+
+        document.getElementById("answer").innerHTML = tempDisplay.toString().replace(/,/g, " ");
+        // console.log(tempDisplay.toString().replace(/,/g, " "));
+        // console.log(blankAnswerArr.toString());
+
 
         //Total guesses is used to get rid of the blinking as well as count the first guess attempt as starting the game
         totalguesses += 1;
@@ -79,7 +84,7 @@ document.onkeyup = function(event) {
     } else if(event.key && (checkKey(event.key) == true) && totalguesses != 0){
         /* If guess is RIGHT ------------------- */
         if(tempAnswerArr.includes(userGuess)){ 
-            var tempLetterArray = []
+            var tempLetterArray = [];
             for(let i = 0; i < tempAnswerArr.length; i++){
                 if(userGuess == tempAnswerArr[i]){
                     tempLetterArray.push(i);
@@ -90,7 +95,8 @@ document.onkeyup = function(event) {
                 blankAnswerArr[tempLetterArray[j]] = userGuess;
             }
 
-            document.getElementById("answer").innerHTML = blankAnswerArr.toString(); //Outputs the wording to the homepage
+            var tempDisplay = blankAnswerArr.toString().replace(/ /g, "&nbsp");
+            document.getElementById("answer").innerHTML = tempDisplay.toString().replace(/,/g, " "); //Outputs the wording to the homepage
 
             if (!blankAnswerArr.includes("_")){
                 alert("Congratulations! You've figured out this game! The Answer was " + tempAnswer);
