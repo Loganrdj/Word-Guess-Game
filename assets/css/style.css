@@ -1,0 +1,71 @@
+/* 
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Press Start 2P', cursive;
+*/
+
+header, body, footer, section, aside{
+    padding: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    text-align: center;
+    outline-style: solid;
+    outline-color: white;
+}
+
+header{
+    background-color: blue;
+}
+
+
+p, h1, h2, h3{
+    text-align: center;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    
+}
+
+section{
+    padding: 40px;
+    padding-bottom: 5%;
+}
+
+aside{
+    float:left;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 25px;
+}
+
+#titlefont{
+    font-size: 50px;
+}
+
+body{
+    background-color: black;
+
+}
+
+footer{
+    font-size: 10px;
+    background-color: blue;
+}
+
+#blinking{
+    margin-left: 27%;
+    text-align: center;
+    animation:blinkingText 0.8s infinite;
+    float: left;
+}
+
+.clear{
+    clear: left;
+}
+
+@keyframes blinkingText{
+    0%      {color: white;}
+    40%     {color: transparent;}
+    50%     {color: transparent;}
+    75%     {color: transparent;}
+    100%    {color: white;}
+}
