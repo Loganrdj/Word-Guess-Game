@@ -32,7 +32,9 @@ section{
 
 
 aside{
+    width: 20%;
     margin:auto;
+    display: block;
     float:left;
     padding-left: 15%;
     padding-bottom: 40px;
@@ -40,8 +42,9 @@ aside{
 
 
 box{
+    /* position: fixed; */
+    display: block;
     float:right;
-    margin:auto;
     padding-right: 20%;
     padding-bottom: 40px;
 }
